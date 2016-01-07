@@ -8,6 +8,6 @@ class ApplicationController < ActionController::Base
   end
 
   def create
-    render plain: params[:todo].inspect
+    render plain: params[:list].inspect
   end
 end

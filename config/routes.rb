@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :todos
+  resources :lists
 
   root 'landing_page#index'
 
