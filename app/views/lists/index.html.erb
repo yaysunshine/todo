@@ -2,6 +2,12 @@
   <% @todos.each do |todo| %>
     <ul>
       <li><%= todo.item %></li>
+      <%= form_for :list, :url => lists_path(), :method => :put  do |f| %>
+        <p>
+          <%= f.hidden_field :done, :value => true %>
+          <%= f.submit("Done") %>
+        </p>
+      <% end %>
     </ul>
   <% end %>
 
@@ -10,3 +16,4 @@
 <p><%= link_to 'New Todo', new_list_path %></p>
 
 <br><br>
+
