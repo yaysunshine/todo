@@ -5,7 +5,7 @@ class ListsController < ApplicationController
   end
 
   def new
-    @single_todo = List.create(params[:item])
+    @single_todo = List.new(params[:item])
     p "*" * 100
     p params
   end

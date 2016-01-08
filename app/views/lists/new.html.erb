@@ -1,11 +1,11 @@
 <h1>New Todo</h1>
-<%= form_for :list, url: lists_path do |f| %>
+<%= form_for @single_todo, :url => lists_path(), :method => :post  do |f| %>
   <p>
     <%= f.label :item %><br>
     <%= f.text_field :item %>
   </p>
-  <p>
-    <%= f.submit %>
+  <p id="addnew">
+    <%= f.submit("Add New Todo") %>
   </p>
 <% end %>
 
