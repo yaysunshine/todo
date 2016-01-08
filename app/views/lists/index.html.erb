@@ -1,16 +1,4 @@
-<h1>New Todo</h1>
-<%= form_for :list do |f| %>
-  <p>
-    <%= f.label :list %><br>
-    <%= f.text_field :item %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-  <p></p>
-  <p></p>
-  <p></p>
-<% end %>
+
 
 <h1>Todos</h1>
   <% @todos.each do |todo| %>
@@ -19,4 +7,11 @@
     </ul>
   <% end %>
 
-<br><br><br><br>
+<br><br>
+
+<p><%= link_to 'New Todo', new_list_path %></p>
+
+
+
+
+<br><br>
