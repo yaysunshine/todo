@@ -2,12 +2,11 @@
   <% @todos.each do |todo| %>
     <ul>
       <li><%= todo.item %></li>
-      <%= form_for :list, :url => list_path(:id), :method => :update  do |f| %>
+      <li><%= todo.id %></li>
         <p>
-          <%= f.hidden_field :done, :value => true %>
-          <%= f.submit("Done") %>
+          <%= hidden_field :done, :value => true %>
+          <%= link_to("Done", list_path(todo.id), :method => :put)%>
         </p>
-      <% end %>
     </ul>
   <% end %>
 
