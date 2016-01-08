@@ -5,15 +5,18 @@ class ListsController < ApplicationController
   end
 
   def new
-    @single_todo = List.new()
-    @single_todo.item = params[:item]
-    @single_todo.save!
-    p "*" * 100
-    p params
+
   end
 
   def create
+    @single_todo = List.create(list_params)
+    # @single_todo.item = params[:item]
     redirect_to lists_url
   end
+
+  private
+    def list_params
+      params.require(:list).permit(:item, :done)
+    end
 
 end
