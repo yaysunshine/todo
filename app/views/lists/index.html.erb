@@ -1,15 +1,8 @@
-<h1>New Item</h1>
-<%= form_for :list do |f| %>
-  <p>
-    <%= f.label :list %><br>
-    <%= f.text_field :item %>
-  </p>
-  <p>
-    <%= f.label :done %><br>
-    <%= f.text_field :item %>
-  </p>
+<h1>Todos</h1>
+  <% @todos.each do |todo| %>
+    <ul>
+      <li><%= todo.item %></li>
+    </ul>
+  <% end %>
 
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<br><br><br><br>
