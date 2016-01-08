@@ -6,6 +6,8 @@ class ListsController < ApplicationController
 
   def new
     @single_todo = List.new
+    @single_todo.save!
+    redirect_to lists_url
   end
 
   def create
