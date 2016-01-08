@@ -15,8 +15,7 @@ class ListsController < ApplicationController
 
   def update
     @done = List.find(params[:id])
-
-    if @done.update_attribute(params[:done])
+    if @done.update_attributes(:done => true)
       redirect_to lists_url
     end
   end
@@ -25,5 +24,4 @@ class ListsController < ApplicationController
     def list_params
       params.require(:list).permit(:item, :done)
     end
-
 end

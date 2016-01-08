@@ -3,9 +3,10 @@
     <ul>
       <li><%= todo.item %></li>
       <li><%= todo.id %></li>
+      <li><%= todo.done %></li>
         <p>
           <%= hidden_field :done, :value => true %>
-          <%= link_to("Done", list_path(todo.id), :method => :put)%>
+          <%= link_to("Done", list_path(todo.id), :done => true, :method => :put)%>
         </p>
     </ul>
   <% end %>
