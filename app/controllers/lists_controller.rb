@@ -10,8 +10,15 @@ class ListsController < ApplicationController
 
   def create
     @single_todo = List.create(list_params)
-    # @single_todo.item = params[:item]
     redirect_to lists_url
+  end
+
+  def update
+    @done = List.find(params[:id])
+
+    if @done.update_attribute(params[:done])
+      redirect_to lists_url
+    end
   end
 
   private

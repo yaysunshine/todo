@@ -2,7 +2,7 @@
   <% @todos.each do |todo| %>
     <ul>
       <li><%= todo.item %></li>
-      <%= form_for :list, :url => lists_path(), :method => :put  do |f| %>
+      <%= form_for :list, :url => list_path(:id), :method => :update  do |f| %>
         <p>
           <%= f.hidden_field :done, :value => true %>
           <%= f.submit("Done") %>

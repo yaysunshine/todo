@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :lists
+  resources :lists, :only => [:index, :create, :update, :new]
 
   root 'lists#index'
 
