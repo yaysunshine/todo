@@ -1,35 +1,42 @@
-<h1>New Todo</h1>
-<div id="newtodoo">
-<%= form_for :list, :url => lists_path(), :method => :post  do |f| %>
-  <p id="new_todo_form">
-    <%= f.label :item %><br>
-    <%= f.text_field :item, class: "item_title" %>
-  </p>
-  <p id="add_new_todo_submit">
-    <%= f.hidden_field :done, :value => false %>
-    <%= f.submit("Add New Todo") %>
-  </p>
-<% end %>
+<div class="row">
+  <div class="col-md-2 col-md-offset-5">
+    <h1>New Todo</h1>
+    <div id="newtodoo">
+    <%= form_for :list, :url => lists_path(), :method => :post  do |f| %>
+      <p id="new_todo_form">
+        <%= f.label :item %><br>
+        <%= f.text_field :item, class: "item_title" %>
+      </p>
+      <p id="add_new_todo_submit">
+        <%= f.hidden_field :done, :value => false %>
+        <%= f.submit("Add New Todo") %>
+      </p>
+    <% end %>
+    </div>
+  </div>
 </div>
 
 <br><br>
 
 <div class="container">
-  <h2>All your todos</h2>
-  <div class="containter_all_todos .col-xs-6">
-    <% @todos.each do |todo| %>
-      <ul class=".col-xs-6">
-        <li><%= todo.item %></li>
-        <li><%= todo.id %></li>
-        <li><%= todo.done %></li>
-          <p id="donee">
-            <%= hidden_field :done, :value => true %>
-            <%= link_to("Done", list_path(todo.id), :done => true, :method => :put)%>
-          </p>
-      </ul>
-    <% end %>
+  <div class="row">
+    <h2>All your todos</h2>
+    <div class="containter_all_todos">
+      <% @todos.each do |todo| %>
+        <ul class="col-xs-6">
+          <li><%= todo.item %></li>
+          <li><%= todo.id %></li>
+          <li><%= todo.done %></li>
+            <p id="donee">
+              <%= hidden_field :done, :value => true %>
+              <%= link_to("Done", list_path(todo.id), :done => true, :method => :put)%>
+            </p>
+        </ul>
+      <% end %>
+    </div>
   </div>
 </div>
+
 <br><br>
 
 <br><br>
