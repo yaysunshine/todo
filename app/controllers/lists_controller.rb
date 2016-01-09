@@ -11,6 +11,11 @@ class ListsController < ApplicationController
   def create
     # binding.pry
     @single_todo = List.create(list_params)
+
+    # respond_to do |format|
+    #   format.json { redirect_to root_path }
+    #   format.js { }
+    # end
     redirect_to lists_url
   end
 
