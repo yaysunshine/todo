@@ -1,4 +1,5 @@
 
+
 <div class="col-md-4 col-md-offset-5">
   <h1>New Todo</h1>
   <div id="newtodoo">
@@ -9,7 +10,7 @@
     </p>
     <p id="add_new_todo_submit">
       <%= f.hidden_field :done, :value => false %>
-      <%= f.submit("Add New Todo") %>
+      <%= f.submit "Add New Todo", :class => "btn btn-secondary-outline" %>
     </p>
   <% end %>
   </div>
@@ -24,12 +25,11 @@
       <li><%= todo.done %></li>
         <p id="donee">
           <%= hidden_field :done, :value => true %>
-          <%= link_to("Done", list_path(todo.id), :done => true, :method => :put)%>
+          <%= link_to("Done", list_path(todo.id),:done => true, :method => :put)%>
         </p>
     </ul>
   <% end %>
 </div>
 
 <br><br>
-
 <br><br>

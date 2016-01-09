@@ -1,5 +1,11 @@
 html {
   overflow-x: hidden;
+  background-color: #99ffcc;
+  font-family: 'Cantarell', sans-serif;
+}
+
+body {
+  background-color: #99ffcc;
 }
 
 #newtodoo {
@@ -8,5 +14,9 @@ html {
 
 h2 {
   padding-bottom: 1em;
+}
+
+.container_all_todos {
+  padding-bottom: 2em;
 }
 
