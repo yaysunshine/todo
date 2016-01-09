@@ -14,21 +14,22 @@
 
 <br><br>
 
-<h2>All your todos</h2>
-<div id="containter_all_todos">
-  <% @todos.each do |todo| %>
-    <ul>
-      <li><%= todo.item %></li>
-      <li><%= todo.id %></li>
-      <li><%= todo.done %></li>
-        <p id="donee">
-          <%= hidden_field :done, :value => true %>
-          <%= link_to("Done", list_path(todo.id), :done => true, :method => :put)%>
-        </p>
-    </ul>
-  <% end %>
+<div class="container">
+  <h2>All your todos</h2>
+  <div class="containter_all_todos .col-xs-6">
+    <% @todos.each do |todo| %>
+      <ul class=".col-xs-6">
+        <li><%= todo.item %></li>
+        <li><%= todo.id %></li>
+        <li><%= todo.done %></li>
+          <p id="donee">
+            <%= hidden_field :done, :value => true %>
+            <%= link_to("Done", list_path(todo.id), :done => true, :method => :put)%>
+          </p>
+      </ul>
+    <% end %>
+  </div>
 </div>
-
 <br><br>
 
 <br><br>

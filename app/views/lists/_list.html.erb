@@ -1,0 +1,5 @@
+<li><%= todo.item %></li>
+<li><%= todo.id %></li>
+<li><%= todo.done %></li>
+<%= link_to("Done", list_path(todo.id), :done => true, :method => :put)%>
+

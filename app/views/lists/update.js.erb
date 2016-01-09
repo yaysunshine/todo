@@ -1,0 +1,7 @@
+<% if @done.done == false %>
+  $("#<%= todo.id %>").html("true");
+  console.log("<%= todo.id %> is done?");
+<% else %>
+  $("#<%= todo.id %>").html("false");
+  console.log("what happens here");
+<% end %>

@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap.min
 //= require_tree .
 
 $(document).ready(function() {
@@ -30,7 +31,7 @@ $(document).ready(function() {
       success: function() {
         console.log(item);
         console.log("success");
-        $("#container_all_todos > ul").prepend("<li>" + item + "</li>");
+        $(".container_all_todos > ul").prepend("<li>" + item + "</li>").load('');
         $(".item_title").val('');
       }
     });
