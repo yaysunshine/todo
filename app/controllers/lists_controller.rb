@@ -10,9 +10,16 @@ class ListsController < ApplicationController
 
   def create
     # binding.pry
-    @single_todo = List.create(list_params)
+    @single_todo = List.new(list_params)
     respond_to do |format|
-      format.json { render :json => {item: @single_todo } }
+      if @single_todo.save
+        format.html { redirect_to @single_todo, notice: "todo successfully created"}
+        format.js {}
+        format.json { render json: @single_todo, status: :created, location: @single_todo }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @single_todo.errors, status: :unprocessable_entity}
+      end
     end
     # if @single_todo.save
     #   render :json => {
