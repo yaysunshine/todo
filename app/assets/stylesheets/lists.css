@@ -2,6 +2,13 @@ html {
   overflow-x: hidden;
   background-color: #99ffcc;
   font-family: 'Cantarell', sans-serif;
+/*  background: url("/world.jpg") no-repeat center center fixed;
+  background-size: cover;*/
+}
+
+* {
+  font-family: 'Cantarell', sans-serif;
+  font-weight: 700;
 }
 
 body {
@@ -14,6 +21,7 @@ body {
 
 h2 {
   padding-bottom: 1em;
+  font-family: 'Cantarell', sans-serif;
 }
 
 .container_all_todos {
