@@ -1,13 +1,14 @@
 <h1>New Todo</h1>
-<%= form_for :list, :url => lists_path(), :method => :post  do |f| %>
+<div id="newtodoo">
+<%= form_for :list, :url => lists_path(), :remote => true, :method => :post  do |f| %>
   <p>
     <%= f.label :item %><br>
-    <%= f.text_field :item %>
+    <%= f.text_field :item, class: "item_title" %>
   </p>
   <p id="addnew">
     <%= f.hidden_field :done, :value => false %>
     <%= f.submit("Add New Todo") %>
   </p>
 <% end %>
-
+</div>
 <br><br>

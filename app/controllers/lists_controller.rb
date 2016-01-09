@@ -9,6 +9,7 @@ class ListsController < ApplicationController
   end
 
   def create
+    # binding.pry
     @single_todo = List.create(list_params)
     redirect_to lists_url
   end
@@ -18,6 +19,12 @@ class ListsController < ApplicationController
     if @done.update_attributes(:done => true)
       redirect_to lists_url
     end
+
+    # respond_to do |format|
+    #   format.html { redirect_to lists_url }
+    #   format.js
+    #   format.json { render json: @done}
+    # end
   end
 
   private
