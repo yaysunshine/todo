@@ -18,7 +18,7 @@ $(document).ready(function() {
         console.log(response.id);
         console.log(item);
         console.log("success");
-        $(".container_all_todos").append("<ul class='col-xs-6'></ul>");
+        $(".container_all_todos").append("<ul class='col-sm-6'></ul>");
         allTodos.append("<li>" + item + "</li><li>" + response.done + "</li>");
         allTodos.append(doneButton);
         $(".item_title").val('');
