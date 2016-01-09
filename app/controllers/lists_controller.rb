@@ -11,12 +11,14 @@ class ListsController < ApplicationController
   def create
     # binding.pry
     @single_todo = List.create(list_params)
-
-    # respond_to do |format|
-    #   format.json { redirect_to root_path }
-    #   format.js { }
+    respond_to do |format|
+      format.json { render :json => {item: @single_todo } }
+    end
+    # if @single_todo.save
+    #   render :json => {
+    #     item: @single_todo
+    #   }
     # end
-    redirect_to lists_url
   end
 
   def update
