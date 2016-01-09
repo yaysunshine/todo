@@ -25,7 +25,6 @@
       <% @todos.each do |todo| %>
         <ul class="col-xs-6">
           <li><%= todo.item %></li>
-          <li><%= todo.id %></li>
           <li><%= todo.done %></li>
             <p id="donee">
               <%= hidden_field :done, :value => true %>

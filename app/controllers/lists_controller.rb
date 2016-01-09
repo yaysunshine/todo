@@ -22,7 +22,6 @@ class ListsController < ApplicationController
     #   end
     # end
     render json: @single_todo
-
   end
 
   def update
