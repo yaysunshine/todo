@@ -15,28 +15,3 @@
 //= require bootstrap.min
 //= require_tree .
 
-$(document).ready(function() {
-
-  $("#newtodoo > form").submit(function(event){
-    event.preventDefault();
-    var url = $(this).attr('action');
-    var method = $(this).attr('method');
-    var item = $(this).find(".item_title").val();
-
-    $.ajax({
-      url: url,
-      type: method,
-      dataType: 'json',
-      data: {list: {item: item, done: false} },
-      success: function() {
-        console.log(item);
-        console.log("success");
-        $(".container_all_todos > ul").prepend("<li>" + item + "</li>").load('');
-        $(".item_title").val('');
-      }
-    });
-
-  });
-
-});
-
