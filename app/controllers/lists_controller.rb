@@ -1,7 +1,7 @@
 class ListsController < ApplicationController
 
   def index
-    @todos = List.all
+    @todos = List.order('id ASC')
   end
 
   def new
@@ -10,22 +10,19 @@ class ListsController < ApplicationController
 
   def create
     # binding.pry
-    @single_todo = List.new(list_params)
-    respond_to do |format|
-      if @single_todo.save
-        format.html { redirect_to @single_todo, notice: "todo successfully created"}
-        format.js {}
-        format.json { render json: @single_todo, status: :created, location: @single_todo }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @single_todo.errors, status: :unprocessable_entity}
-      end
-    end
-    # if @single_todo.save
-    #   render :json => {
-    #     item: @single_todo
-    #   }
+    @single_todo = List.create(list_params)
+    # respond_to do |format|
+    #   if @single_todo.save
+    #     format.html { redirect_to @single_todo, notice: "todo successfully created"}
+    #     format.js {}
+    #     format.json { render json: @single_todo, status: :created, location: @single_todo }
+    #   else
+    #     format.html { render action: "new" }
+    #     format.json { render json: @single_todo.errors, status: :unprocessable_entity}
+    #   end
     # end
+    render json: @single_todo
+
   end
 
   def update
