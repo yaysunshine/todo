@@ -18,9 +18,7 @@ $(document).ready(function() {
         console.log(response.id);
         console.log(item);
         console.log("success");
-        $(".container_all_todos").append("<ul class='col-sm-6'></ul>");
-        allTodos.append("<li>" + item + "</li><li>" + response.done + "</li>");
-        allTodos.append(doneButton);
+        $(".container_all_todos").append("<ul class='col-sm-6'><li>" + item + "</li><li>" + response.done + "</li><li><a done='true' rel='nofollow' data-method='put' href='/lists/" + response.id + "'>Done</a></li></ul>");
         $(".item_title").val('');
       }
     });
