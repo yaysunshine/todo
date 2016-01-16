@@ -5,7 +5,6 @@ $(document).ready(function() {
     var url = $(this).attr('action');
     var method = $(this).attr('method');
     var item = $(this).find(".item_title").val();
-    var allTodos = $(".container_all_todos > ul").last();
 
     $.ajax({
       url: url,
@@ -13,7 +12,6 @@ $(document).ready(function() {
       dataType: 'json',
       data: {list: {item: item, done: false} },
       success: function(response) {
-        var doneButton = $("<p>").html("<a done='true' rel='nofollow' data-method='put' href='/lists/" + response.id + "'>Done</a>");
         console.log(response);
         console.log(response.id);
         console.log(item);
